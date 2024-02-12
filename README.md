@@ -42,4 +42,8 @@ Distributed under the MIT License. See LICENSE for more information.
 
 Acknowledgements
 React Documentation
+<<<<<<< HEAD
 OpenWeatherMap
+=======
+OpenWeatherMap
+>>>>>>> f0e32683dc5ccbe4f8f2be675a4a1aaa265ce62b
