@@ -13,9 +13,9 @@ import light_icon from "../Assets/light-cloud.png";
 import storm_icon from "../Assets/storm.png";
 
 export const WeatherApp = () => {
-  let api_key = "5f26ed933f0baa79c33c672bdaa3c8b8";
+  let api_key = process.env.REACT_APP_API_KEY;
 
-  const [wicon, setWicon] = useState(cloudy_icon)
+  const [wicon, setWicon] = useState(cloudy_icon);
 
   const search = async () => {
     const element = document.getElementsByClassName("city");
@@ -37,24 +37,42 @@ export const WeatherApp = () => {
     temperature[0].innerHTML = Math.floor(data.main.temp) + "°c";
     location[0].innerHTML = data.name;
 
-    if(data.weather[0].icon==='01d' || data.weather[0].icon ==='01n') {
-        setWicon(sunny_icon);
-    }  else if(data.weather[0].icon==='02d' || data.weather[0].icon ==='02n') {
-    setWicon(light_icon);
-    } else if(data.weather[0].icon==='09d' || data.weather[0].icon ==='09n') {
-        setWicon(rainy_icon);
-    } else if(data.weather[0].icon==='10d' || data.weather[0].icon ==='10n') {
-        setWicon(drizzle_icon);
-    } else if(data.weather[0].icon==='11d' || data.weather[0].icon ==='11n') {
-        setWicon(storm_icon);
-    } else if(data.weather[0].icon==='50d' || data.weather[0].icon ==='50n') {
-        setWicon(foggy_icon);
-    } else if(data.weather[0].icon==='13d' || data.weather[0].icon ==='13n') {
-        setWicon(snowy_icon);
+    if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n") {
+      setWicon(sunny_icon);
+    } else if (
+      data.weather[0].icon === "02d" ||
+      data.weather[0].icon === "02n"
+    ) {
+      setWicon(light_icon);
+    } else if (
+      data.weather[0].icon === "09d" ||
+      data.weather[0].icon === "09n"
+    ) {
+      setWicon(rainy_icon);
+    } else if (
+      data.weather[0].icon === "10d" ||
+      data.weather[0].icon === "10n"
+    ) {
+      setWicon(drizzle_icon);
+    } else if (
+      data.weather[0].icon === "11d" ||
+      data.weather[0].icon === "11n"
+    ) {
+      setWicon(storm_icon);
+    } else if (
+      data.weather[0].icon === "50d" ||
+      data.weather[0].icon === "50n"
+    ) {
+      setWicon(foggy_icon);
+    } else if (
+      data.weather[0].icon === "13d" ||
+      data.weather[0].icon === "13n"
+    ) {
+      setWicon(snowy_icon);
     } else {
-        setWicon(cloudy_icon);
+      setWicon(cloudy_icon);
     }
-};
+  };
 
   return (
     <div className="container">
